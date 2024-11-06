@@ -1,8 +1,136 @@
-.selected{
-  background-color: rgb(128, 128, 128)
-
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.completed{
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  color: #333;
+  line-height: 1.6;
+  padding: 20px;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+h1 {
+  font-size: 2rem;
+  color: #4caf50;
+}
+
+/* Estilização da lista de tarefas */
+#lista-tarefas {
+  list-style-type: none;
+  padding-left: 0;
+  margin-bottom: 20px;
+}
+
+.item-lista {
+  padding: 10px;
+  background-color: #fff;
+  margin: 5px 0;
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease;
+}
+
+.item-lista:hover {
+  background-color: #f1f1f1;
+}
+
+.selected {
+  background-color: rgb(128, 128, 128);
+}
+
+.completed {
   text-decoration: line-through solid rgb(0, 0, 0);
+  color: #888;
+}
+
+/* Estilização dos botões */
+button {
+  background-color: #4caf50;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  margin: 5px;
+  font-size: 1rem;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+  background-color: #45a049;
+  transform: scale(1.05);
+}
+
+button:active {
+  transform: scale(0.98);
+}
+
+button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+/* Formatação do input de texto */
+input[type='text'] {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border-radius: 25px;
+  border: 1px solid #ddd;
+  font-size: 1rem;
+  box-sizing: border-box;
+}
+
+#texto-tarefa {
+  margin-bottom: 10px;
+}
+
+/* Estilização das instruções */
+#funcionamento {
+  font-size: 1rem;
+  margin-bottom: 15px;
+  text-align: center;
+  color: #666;
+}
+
+/* Responsividade */
+@media (max-width: 600px) {
+  h1 {
+    font-size: 1.6rem;
+  }
+
+  button {
+    font-size: 0.9rem;
+    padding: 8px 16px;
+  }
+
+  .item-lista {
+    font-size: 0.9rem;
+    padding: 8px;
+  }
+
+  #texto-tarefa {
+    font-size: 0.9rem;
+  }
+}
+
+/* Layout de botões abaixo do input */
+#criar-tarefa,
+#salvar-tarefas,
+#mover-cima,
+#mover-baixo,
+#remover-selecionado {
+  display: inline-block;
 }
